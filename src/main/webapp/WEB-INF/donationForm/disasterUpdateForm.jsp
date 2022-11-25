@@ -82,8 +82,8 @@
     </style>
     
     <script>
-       function DisasterArticleCreate() {
-         form.submit();
+       function DisasterArticleUpdate() {
+    	   form.submit();
       }
     </script>
 </head>

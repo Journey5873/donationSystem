@@ -40,6 +40,7 @@
             color: black;
         }
     </style>
+    
     <script>
       function login() {
          if (form.userId.value == "") {
@@ -52,6 +53,7 @@
             form.password.focus();
             return false;
          }      
+         
          form.submit();
       }
       
@@ -104,8 +106,18 @@
                         <input type="button" value="Join" onClick="userCreate(
                         '<c:url value='/user/register'/>')">
                     </td>
+                </tr>         
+                
+                <tr>
+                   <td colspan="2">
+                       <c:if test="${loginFailed}">
+                       <script>
+                     		alert("<c:out value='${exception.getMessage()}' />");
+                       </script>
+                    </c:if>
+                   </td>
                 </tr>
-            </table>
+       		</table>
         </form>
     </div>
 </body>
