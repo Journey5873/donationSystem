@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.apache.catalina.manager.util.SessionUtils;
+//import org.apache.catalina.manager.util.SessionUtils;
 
 import controller.Controller;
 import controller.user.RegisterUserController;

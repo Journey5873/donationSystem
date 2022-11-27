@@ -285,20 +285,34 @@
             margin: 10px;
         }
 
-        .container .comment>.comm>.line>button {
-            border: none;
-            padding: 5px;
-            border-radius: 3px;
-            float: right;
-        }
-
-        button {
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            cursor: pointer;
-        }
+	.container .btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
+		}
+		
+		.container .btn>div {
+			background-color: gray;
+			border-radius: 3px;
+			color: white;
+			transition: all 0.3s ease;
+			padding: 5px;
+		}
+		
+		.container .btn>div:hover {
+			background-color: lightgray;
+		}
+		
+		.container .btn > div > a {
+			text-decoration: none;
+			color: white;
+		}
+		
+		.container .btn > div > a:hover {
+			color: black;
+			cursor: pointer;
+		}
     </style>
     <script>
     	function commentCreate() {
@@ -505,8 +519,16 @@
                 <span>${article.accHolder }</span>
                 <span>${article.accNum }</span>
             </div>
+			
 
-            <button>후원하기</button>
+	            <div class="btn">
+					<div>
+						<a href="<c:url value='/donation' >
+				  				<c:param name='articleId' value='${article.articleId}'/>
+				  				<c:param name='category' value='${article.category}'/>
+				  		</c:url>">Donate now</a>
+					</div>
+				</div>
         </div>
 
         <hr>
@@ -515,64 +537,22 @@
             <h2 class="info-title">후원금 입금 내역</h2>
 
             <table>
-                <tr>
+            	<tr>
                     <th>이름</th>
                     <th>후원금액(단위 : 원)</th>
                 </tr>
-
+            
+            	<c:forEach var="donator" items="${donatorList}">
+            		<tr>
+	                    <td>${donator.userId }</td>
+	                    <td>${donator.amount }</td>
+                	</tr>
+            	</c:forEach>
+                
                 <tr>
-                    <td>김민수</td>
-                    <td>15,000</td>
+                    <th colspan="2">총액 : ${article.totalAmount }</th>
                 </tr>
-
-                <tr>
-                    <td>박지운</td>
-                    <td>1,000</td>
-                </tr>
-
-                <tr>
-                    <td>이진우</td>
-                    <td>50,000</td>
-                </tr>
-
-                <tr>
-                    <td>김민지</td>
-                    <td>10,000</td>
-                </tr>
-
-                <tr>
-                    <td>이예진</td>
-                    <td>55,000</td>
-                </tr>
-
-                <tr>
-                    <td>최수하</td>
-                    <td>1,000</td>
-                </tr>
-
-                <tr>
-                    <td>임지민</td>
-                    <td>500</td>
-                </tr>
-
-                <tr>
-                    <td>이경원</td>
-                    <td>35,000</td>
-                </tr>
-
-                <tr>
-                    <td>박지은</td>
-                    <td>10,000</td>
-                </tr>
-
-                <tr>
-                    <td>이주원</td>
-                    <td>15,000</td>
-                </tr>
-
-                <tr>
-                    <th colspan="2">총액 : 500,000</th>
-                </tr>
+                
             </table>
         </div>
 
