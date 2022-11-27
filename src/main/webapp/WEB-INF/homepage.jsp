@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page contentType="text/html; charset=utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,17 +58,17 @@
         <div class="category">
             <div>
                 <img src="./img/animal.png" alt="">
-                <div>µøπ∞</div>
+                <div>ÎèôÎ¨º</div>
             </div>
 
             <div>
                 <img src="./img/volunteer.jpg" alt="">
-                <div>ªÁ»∏√Îæ‡ ∞Ë√˛</div>
+                <div>ÏÇ¨ÌöåÏ∑®ÏïΩ Í≥ÑÏ∏µ</div>
             </div>
 
             <div>
                 <img src="./img/disaster.jpg" alt="">
-                <div>¿Á≥≠ ¿Á«ÿ</div>
+                <div>Ïû¨ÎÇú Ïû¨Ìï¥</div>
             </div>
         </div>
     </div>
