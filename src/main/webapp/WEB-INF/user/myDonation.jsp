@@ -80,7 +80,6 @@
 
     <div class="container">
         <h2>내가 기부한 목록</h2>
-
         <hr>
         <table>
             <tr>
