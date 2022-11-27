@@ -92,4 +92,5 @@ public class DisasterArticle extends DonationArticle {
 		this.situation = situation;
 	}
 
+	
 }

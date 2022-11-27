@@ -1,48 +1,59 @@
 package model;
 
-public class DonationImage
-{
-    String imgLink;
-    int imgOrder;
-    int articleId;
-    
-    public DonationImage() {
+public class DonationImage {
+	private int articleId;
+	private int fileOrder;
+	private String fileName;
+	DonationArticle article;
 
-    }
+	public DonationImage() {
+		super();
+	}
 
-    public DonationImage(String imgLink, int imgOrder, int articleId) {
-        this.imgLink = imgLink;
-        this.imgOrder = imgOrder;
-        this.articleId = articleId;
-    }
+	public DonationImage(int articleId, int fileOrder, String fileName, DonationArticle article) {
+		super();
+		this.articleId = articleId;
+		this.fileOrder = fileOrder;
+		this.fileName = fileName;
+		this.article = article;
+	}
 
-    public String getImgLink() {
-        return imgLink;
-    }
+	public int getArticleId() {
+		return articleId;
+	}
 
-    public void setImgLink(String imgLink) {
-        this.imgLink = imgLink;
-    }
+	public void setArticleId(int articleId) {
+		this.articleId = articleId;
+	}
 
-    public int getImgOrder() {
-        return imgOrder;
-    }
+	public int getFileOrder() {
+		return fileOrder;
+	}
 
-    public void setImgOrder(int imgOrder) {
-        this.imgOrder = imgOrder;
-    }
+	public void setFileOrder(int fileOrder) {
+		this.fileOrder = fileOrder;
+	}
 
-    public int getArticleId() {
-        return articleId;
-    }
+	public String getFileName() {
+		return fileName;
+	}
 
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
-    }
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
-    @Override
-    public String toString() {
-        return "DonationImage [imgLink=" + imgLink + ", imgOrder=" + imgOrder + ", articleId=" + articleId + "]";
-    }
-    
+	public DonationArticle getArticle() {
+		return article;
+	}
+
+	public void setArticle(DonationArticle article) {
+		this.article = article;
+	}
+
+	@Override
+	public String toString() {
+		return "DonationImage [articleId=" + articleId + ", fileOrder=" + fileOrder + ", fileName=" + fileName
+				+ ", article=" + article + "]";
+	}
+
 }
