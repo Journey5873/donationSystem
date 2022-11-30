@@ -338,8 +338,8 @@
         
     }
     
-    function createReceipt() {
-        var child = window.open("<c:url value='/donationList/receipt' > <c:param name='articleId' value='${article.articleId}'/> <c:param name='category' value='${article.category}'/> </c:url>", "receiptCreate", "width=640, height=400");
+    function createReceipt(url) {
+        var child = window.open(url, "receiptCreate", "width=640, height=400");
         //window.location.reload();
         //child.close();
     }
@@ -516,7 +516,7 @@
             <c:if test="${empty donationReceipt.receiptId }">
                 <c:if test="${sessionScope.userId eq article.userId }">
                     <div>
-                        <button onclick="createReceipt()">인증글 올리기</button>
+                        <button onclick="createReceipt('<c:url value='/donationList/receipt' > <c:param name='articleId' value='${article.articleId}'/> <c:param name='category' value='${article.category}'/> </c:url>')">인증글 올리기</button>
                     </div>
                 </c:if>
             
@@ -545,12 +545,10 @@
                 <div class="receipt-info">
                     <div class="basic">인증 내역 사진</div>
                     <div class="imgPost">
-                        <c:forEach var="receiptImage" items="${donationReceipt.imageList}">
-                            <img src="<c:url value='/upload/${receiptImage.imgLink}'/>"><br>
-                        </c:forEach>
-                        <!-- 첫번째 이미지파일 -->
-                        <%-- <img src="<c:url value='/upload/${donationReceipt.imageList[0].fileName}'/>"/><br/> --%>
-                    </div>
+            			<c:forEach var="receiptImage" items="${receiptImageList}">
+                			<img src="<c:url value='/upload/${receiptImage.imgLink}'/>"><br>
+            			</c:forEach>
+        			</div>
                     
                     <div class="basic">인증 내역 설명</div>
                     <div>${donationReceipt.content}</div>
